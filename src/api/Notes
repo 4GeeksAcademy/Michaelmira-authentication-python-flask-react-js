@@ -1,3 +1,14 @@
+To start working
+
+Terminal 1 (Backend)
+pipenv run start
+
+Terminal 2
+psql -h localhost -U gitpod example
+
+Terminal 3  
+npm run start
+
 
 At some point to use authentication systems you need to run this.
 pipenv install flask-jwt-extended
