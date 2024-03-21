@@ -1,0 +1,7 @@
+
+At some point to use authentication systems you need to run this.
+pipenv install flask-jwt-extended
+
+and import similar at top of flux  from flask_jwt_extended import jwt
+
+https://flask-jwt-extended.readthedocs.io/en/stable/ 
