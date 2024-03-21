@@ -18,22 +18,22 @@ export const Home = () => {
 	}
 
 	return (
-		<div>
-			<form>
-				<input
-					type="text"
-					placeholder="email"
-					value={email}
-					onChange={(event) => setEmail(event.target.value)}/>
-				<input
-					type="text"
-					placeholder="password"
-					value={password}
-					onChange={(event) => setPassword(event.target.value)}/>
-				<button type="button" onClick={handleLogin}> submit
-				</button>
-				
-
+		<div className="container">
+			<form className="row justify-content-center" >
+				<div className="col-md-6">
+					<input
+						type="text"
+						placeholder="email"
+						value={email}
+						onChange={(event) => setEmail(event.target.value)}/>
+					<input
+						type="text"
+						placeholder="password"
+						value={password}
+						onChange={(event) => setPassword(event.target.value)}/>
+					<button type="button" onClick={handleLogin}> submit
+					</button>
+				</div>
 			</form>
 		</div>
 	);
