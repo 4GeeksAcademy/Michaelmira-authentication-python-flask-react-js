@@ -26,7 +26,7 @@ def handle_logins():
         return jsonify({"msg": "Bad email or password"}), 401
 
     access_token = create_access_token(identity=user.id)
-    return jsonify(access_token=access_token)
+    return jsonify(access_token=access_token), 201
 
 @api.route('/hello', methods=['POST', 'GET'])
 def handle_hello():
