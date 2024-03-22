@@ -47,7 +47,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					process.env.BACKEND_URL + "/api/private", {
 						headers: {
 							"Content-type": "application/json",
-							"Authorization": "Bearer" + store.token
+							"Authorization": "Bearer " + store.token
 						}
 					}
 				);
