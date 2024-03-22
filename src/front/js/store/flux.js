@@ -65,6 +65,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 					localStorageChecked: true
 			},
 
+			logUserOut:() => {
+				setStore({
+					token: undefined
+				});
+				if (localStorage.getItem("token")) {
+					localStorage.removeItem("token");
+				}
+			},
+
 			getMessage: async () => {
 				try{
 					// fetching data from the backend
