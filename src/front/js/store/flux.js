@@ -36,6 +36,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({
 					token: responseBody.access_token
 				})
+				localStorage.setItem("token", responseBody.access_token);
 				return true;
 
 			},
