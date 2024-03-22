@@ -41,6 +41,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 				localStorage.setItem("token", responseBody.access_token);
 				return true;
 			},
+			fetchPrivateEndpointP: async () => {
+				const response = await fetch(
+					process.env.BACKEND_URL + "/api/private"
+				);
+				const body = await response.json();
+				setStore({
+					privateData: body
+				});
+			},
 			checkIfTokenInLocalStorage: () => {
 				if (localStorage.getItem("token")){
 					setStore({

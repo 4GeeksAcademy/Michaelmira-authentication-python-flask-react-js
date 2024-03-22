@@ -13,6 +13,13 @@ export const Profile = (props) => {
     }, [store.token, navigate]);
     
     return (
-        <h2> Hello Profile </h2>
+        <div className="d-flex flex-column w-100 align-items-center" >
+            <h2>Hello Profile</h2>
+            <button
+                onClick={(event) => actions.fetchPrivateEndpoint()}>
+                click me!
+            </button>
+            <p>{store.privateData}</p>
+        </div>
     );
 };
