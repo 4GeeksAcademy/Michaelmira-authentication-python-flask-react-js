@@ -62,7 +62,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						token: localStorage.getItem("token")
 					});
 				}
-					localStorageChecked: true
+					// localStorageChecked: true
 			},
 
 			logUserOut:() => {
@@ -72,6 +72,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				if (localStorage.getItem("token")) {
 					localStorage.removeItem("token");
 				}
+				console.log(getStore().token)
 			},
 
 			getMessage: async () => {
