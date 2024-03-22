@@ -16,7 +16,7 @@ export const Navbar = () => {
                             Log out
                         </button>
                     ) : (
-                        <Link to="/demo">
+                        <Link to="/log-in">
                             <button className="btn btn-primary">Log in</button>
                         </Link>
                     )}
