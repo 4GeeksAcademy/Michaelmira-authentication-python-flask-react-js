@@ -13,7 +13,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			token: undefined,
+			localStorageChecked: undefined
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -38,7 +40,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 				})
 				localStorage.setItem("token", responseBody.access_token);
 				return true;
-
+			},
+			checkIfTokenInLocalStorage: () => {
+				if (localStorage.getItem("token")){
+					setStore({
+						token: localStorage.getItem("token")
+					});
+				}
+					localStorageChecked: true
 			},
 
 			getMessage: async () => {

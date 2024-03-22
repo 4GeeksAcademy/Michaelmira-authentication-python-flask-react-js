@@ -7,7 +7,7 @@ export const Profile = (props) => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (!store.token) {
+        if (store.localStorageChecked && !store.token ) {
             navigate("/log-in");
         }
     }, [store.token, navigate]);
