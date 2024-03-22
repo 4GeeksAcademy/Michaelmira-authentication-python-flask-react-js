@@ -21,6 +21,7 @@ def handle_logins():
     user = User.query.filter_by(email=email).one_or_none()
     if user is None:
         return jsonify({"msg": "no such user"}), 404
+    print(">>> password vs incoming password", user.password, password )
     if user.password != password:
         return jsonify({"msg": "Bad email or password"}), 401
 

@@ -3,11 +3,10 @@ import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
 
 export const Login = (props) => {
-
     const navigate = useNavigate();
     const { store, actions } = useContext(Context);
-	const [email, setEmail] = useState();
-	const [password, setPassword] = useState();
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
 	const handleLogin = async(event) => {
 		// validate there is an email
 		// validate there is a password
@@ -15,8 +14,12 @@ export const Login = (props) => {
 			email: email,
 			password: password
 		});
-		if (success) Navigate("/profile")
-	}
+		if (success) {
+            navigate("/profile");
+	    } else {
+        alert("something went wrong");
+        }
+    }
 
     const [formVisible, setFormVisible] = useState(false); // State to control visibility of the form
 	useEffect(() => {

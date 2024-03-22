@@ -23,7 +23,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			logIn: async (body) => {
 				const response = await fetch(
-					process.env.BACKEND_URL + "api/log-ins", {
+					process.env.BACKEND_URL + "/api/log-ins", {
 						method: "POST",
 						body: JSON.stringify(body),
 						headers: {
