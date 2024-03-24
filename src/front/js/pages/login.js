@@ -54,10 +54,22 @@ export const Login = (props) => {
                             />
                         </div>
                         <div style={{ textAlign: 'center' }}>
-                            <button
+                        <button
                                 type="button"
-                                style={{ backgroundColor: '#007bff', color: '#fff', border: 'none', borderRadius: '5px', padding: '10px 20px', cursor: 'pointer' }}
+                                style={{ 
+                                    backgroundColor: '#007bff', 
+                                    color: '#fff', 
+                                    border: 'none', 
+                                    borderRadius: '5px', 
+                                    padding: '10px 20px', 
+                                    cursor: 'pointer',
+                                    boxShadow: '0px 5px 10px rgba(0, 0, 0, 0.2)',
+                                    transition: 'box-shadow 0.3s ease',
+                                    outline: 'none',
+                                }}
                                 onClick={handleLogin}
+                                onMouseEnter={(e) => e.target.style.boxShadow = '0px 8px 15px rgba(0, 0, 0, 0.3)'}
+                                onMouseLeave={(e) => e.target.style.boxShadow = '0px 5px 10px rgba(0, 0, 0, 0.2)'}
                             >
                                 Submit
                             </button>
