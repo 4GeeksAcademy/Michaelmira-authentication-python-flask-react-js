@@ -3,7 +3,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			message: null,
 			token: undefined,
-			localStorageChecked: undefined
+			sessionStorageChecked: undefined
 		},
 		actions: {
 
@@ -22,7 +22,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({
 					token: responseBody.access_token
 				})
-				localStorage.setItem("token", responseBody.access_token);
+				sessionStorage.setItem("token", responseBody.access_token);
 				return true;
 			},
 			fetchPrivateEndpoint: async () => {
@@ -40,21 +40,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 					privateData: body
 				});
 			},
-			checkIfTokenInLocalStorage: () => {
-				if (localStorage.getItem("token")){
+			checkIfTokenInSessionStorage: () => {
+				if (sessionStorage.getItem("token")){
 					setStore({
-						token: localStorage.getItem("token")
+						token: sessionStorage.getItem("token")
 					});
 				}
-					// localStorageChecked: true
+					// sessionStorageChecked: true
 			},
 
 			logUserOut:() => {
 				setStore({
 					token: undefined
 				});
-				if (localStorage.getItem("token")) {
-					localStorage.removeItem("token");
+				if (sessionStorage.getItem("token")) {
+					sessionStorage.removeItem("token");
 				}
 				console.log(getStore().token)
 			},

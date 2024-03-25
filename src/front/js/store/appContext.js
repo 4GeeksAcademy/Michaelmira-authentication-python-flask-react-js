@@ -22,7 +22,7 @@ const injectContext = PassedComponent => {
 		);
 
 		useEffect(() => {
-			state.actions.checkIfTokenInLocalStorage
+			state.actions.checkIfTokenInSessionStorage
 			state.actions.getMessage(); // <---- calling this function from the flux.js actions
 		}, []);
 		return (
